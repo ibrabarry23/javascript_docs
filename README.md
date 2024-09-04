@@ -1,6 +1,5 @@
 # Appunti JavaScript
 
-QJavaScript: Spiegazione Completa e Approfondita
 Questo repository contiene una panoramica completa del linguaggio di programmazione JavaScript, presentata in un formato chiaro e conciso. È stato creato con l'obiettivo di fornire una risorsa didattica per coloro che desiderano approfondire la loro conoscenza di JavaScript, dai concetti fondamentali fino a temi più avanzati come la programmazione asincrona, il DOM, le chiusure e le classi.
 
 ## Contenuti:
@@ -22,7 +21,8 @@ Nota: Sebbene abbia una conoscenza pregressa di JavaScript, ho creato questo rep
 
 ## Come utilizzare questo repository:
 
-Esplora le presentazioni Marp per una panoramica visiva di ciascun argomento.
+Esplora le presentazioni Marp per una panoramica visiva di ci
+ascun argomento.
 Leggi le note dettagliate per approfondire la tua comprensione.
 Sperimenta con il codice JavaScript per mettere in pratica ciò che hai imparato.
 Contributi:
