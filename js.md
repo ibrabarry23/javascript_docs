@@ -621,3 +621,344 @@ $$ \sum^{10}_{i=1} i $$
 - Il risultato di questa sommatoria è:
 
 $$\frac{n(n+1)}{2} = \frac{10(10+1)}{2} = 55$$
+
+---
+<!-- _header: Cicli -->
+
+## While
+
+Il ciclo while viene utilizzato quando la condizione di ripetizione
+non è nota in anticipo e deve essere verificata all'inizio di ogni
+iterazione. Come per il ciclo for valuta la condizione se restituisce
+il valore di verità vero il codice nel blocco delle istruzioni viene
+eseguito, altrimenti il ciclo termina.
+
+
+----
+<!-- _header: Cicli -->
+
+```js
+let somma = 0;
+let numero = 1;
+
+while (numero <= 10) {
+    somma += numero;
+    console.log(`Aggiunto ${numero}. La somma parziale è: ${somma}`);
+    numero++;
+}
+
+console.log(`La somma totale dei numeri da 1 a 10 è: ${somma}`);
+```
+----
+<!-- _header: Cicli -->
+## do while
+
+Il ciclo do while è simile al ciclo while, ma la condizione viene
+valutata alla fine di ogni iterazione.
+Ovvero il blocco di codice viene sempre eseguito almeno una
+volta.
+```js
+let i = 0;
+do {
+console.log(i);
+i++;
+} while (i <= 5);
+```
+----
+<!-- _header: Cicli -->
+## Invariante del ciclo
+
+L'invariante del ciclo, in questo caso, è che la variabile sum
+contenga la somma corretta dei numeri da 1 a i. All'inizio del
+ciclo, quando i è uguale a 1, la variabile sum è uguale a 0. Durante
+ogni iterazione successiva, il valore di i viene aggiunto a sum,
+mantenendo l'invariante. Alla fine dell'esecuzione del ciclo, avremo eseguito l'operazione sum += i per ogni i compreso tra 1 e 10. Quindi, la variabile sum conterrà la somma dei numeri da 1 a 10.
+
+---
+<!-- _header: Funzioni -->
+## Funzioni
+
+Una funzione è un blocco di codice che può essere chiamata o
+eseguita per svolgere una specifica operazione o compito. Le
+funzioni consentono di organizzare il codice in unità modulari e
+riutilizzabili, facilitando la scrittura, la comprensione e la
+manutenzione del software.
+```js
+function nomeFunzione(parametro){
+//copro della funzione
+//codice da eseguire
+// valore di ritorno
+}
+```
+---
+<!-- _header: Funzioni -->
+```js
+function calcolaQuadrato(numero) {
+let quadrato = numero * numero;
+return quadrato;
+}
+let numeroDaCalcolare = 5;
+let risultato = calcolaQuadrato(numeroDaCalcolare);
+console.log(risultato);
+```
+Nell'esempio , abbiamo definito una funzione chiamata
+calcolaQuadrato che accetta un parametro numero. All'interno
+del corpo della funzione, abbiamo dichiarato una variabile locale
+chiamata quadrato e abbiamo calcolato il quadrato
+del numero moltiplicandolo per se stesso. Infine, la funzione
+restituisce il valore del quadrato.
+
+---
+<!-- _header: Funzioni -->
+## Arrow function
+
+Le arrow function sono un tipo di sintassi introdotta in
+ECMAScript 6 per definire funzioni in JavaScript. Sono una
+forma concisa e compatta per dichiarare funzioni anonime.
+```js
+let calcolaQuadrato = (numero) => {
+let quadrato = numero * numero;
+return quadrato;
+}
+let numeroDaCalcolare = 5 ;s
+let risultato = calcolaQuadrato(numeroDaCalcolare);
+console.log(risultato);
+```
+---
+<!-- _header: Funzioni -->
+# Funzioni ricorsive
+La ricorsione è una tecnica di programmazione in cui una funzione si chiama su istanze di problema più piccole per risolvere il problema originale.  L'intuizione è semplice: per salire una scala con i gradini, si sale un gradino e si è ridotto il problema a quello di salire una scala (più corta) con $n-1$ gradini.
+
+---
+<!-- _header: Funzioni -->
+
+Nello sviluppo di una funzione ricorsiva, ci sono tre elementi fondamentali da considerare. Innanzitutto, è essenziale definire un caso ricorsivo, che consiste nel descrivere il problema come una composizione di sotto-problemi più piccoli. Ogni sotto-problema deve essere un'istanza dello stesso problema originale, ma applicato a un input di dimensioni ridotte. In questa fase, la funzione chiamerà se stessa per risolvere ciascuno di questi sotto-problemi.
+
+---
+<!-- _header: Funzioni -->
+
+Il secondo elemento cruciale è la definizione del caso base. Questo determina quando la ricorsione deve fermarsi. È necessario identificare la dimensione del problema per la quale la soluzione è già nota e non è più necessario ricorrere alla ricorsione. Questo passaggio è fondamentale per evitare che la funzione si chiami infinitamente, garantendo così la terminazione del processo ricorsivo.
+
+
+Infine, il terzo ingrediente consiste nel combinare le soluzioni dei sotto-problemi per risolvere il problema originale. Questo passaggio richiede di integrare i risultati ottenuti dalle chiamate ricorsive in modo da costruire la soluzione complessiva del problema iniziale.
+
+---
+<!-- _header: Funzioni -->
+## caso base
+Il caso base è cruciale per il corretto funzionamento di una funzione ricorsiva, in quanto definisce quando la ricorsione deve terminare. Senza un caso base appropriato, la funzione rischierebbe di chiamare se stessa indefinitamente.
+
+----
+<!-- _header: Funzioni -->
+## Esecuzione step by step
+Per comprendere  al meglio come funziona la ricorsione, è utile esaminare l'esecuzione passo dopo passo di una funzione ricorsiva. Un esempio efficace è la funzione fattoriale.  Quando chiamiamo la funzione fattoriale con un input, diciamo 5, la funzione inizia una serie di chiamate ricorsive. 
+
+---
+
+<!-- _header: Funzioni -->
+### Funzione fattoriale
+La funzione fattoriale è un  esempio di funzione che può essere implementata in modo ricorsivo. Matematicamente, il fattoriale di un numero intero non negativo $n \geq 0$, indicato con $n!$, è definito come il prodotto di tutti i numeri interi positivi da $1$ a $n$
+
+---
+
+<!-- _header: Funzioni -->
+
+#### Definizione matematica:
+- $n \cdot n! = n \cdot (n-1) \cdot (n-2) \cdot ... \cdot 2 \cdot 1$ per $n > 0$
+ - $0!=1$ 
+ - È possibile dimostrare che $0! = 1$ utilizzando la definzione di fattoriale:
+
+$$ n!=n(n-1)!$$
+$$ 1! = 1(1-1)!= 0! $$
+
+--- 
+<!-- _header: Funzioni -->
+#### Definizione ricorsiva:
+
+$$ n! = \begin{cases}
+        n \cdot(n-1)! \ \text{if} \ n>0 \\
+        1 \ \text{if} \ n = 0 
+    \end{cases} $$ 
+    
+```js
+function fattoriale(n){
+    if(n==0) return 1;
+    return n * fattoriale(n-1);
+}
+```
+--- 
+<!-- _header: Funzioni -->
+
+Ad ogni chiamata, la funzione verifica se ha raggiunto il caso base (che per il fattoriale è quando l'input è 0 o 1). Se non è così, effettua una nuova chiamata ricorsiva con un input ridotto. Questo processo continua finché non si raggiunge il caso base.
+Nel nostro esempio, la sequenza di chiamate sarebbe:
+factorial(4) chiama factorial(3)
+factorial(3) chiama factorial(2)
+factorial(2) chiama factorial(1)
+factorial(1) raggiunge il caso base e restituisce 1
+
+---
+<!-- _header: Funzioni -->
+
+A questo punto, le chiamate iniziano a "svolgersi" nell'ordine inverso:
+factorial(2) moltiplica il risultato di factorial(1) per 2 e restituisce 2
+factorial(3) moltiplica il risultato di factorial(2) per 3 e restituisce 6
+factorial(4) moltiplica il risultato di factorial(3) per 4 e restituisce 24
+
+Questo processo di chiamate ricorsive seguite dal "riavvolgimento" delle chiamate è fondamentale per comprendere come funziona la ricorsione. Ogni chiamata ricorsiva crea un nuovo contesto di esecuzione, che viene mantenuto nello stack di chiamata finché la funzione non restituisce un valore.
+
+----
+<!-- _header: Oggetti -->
+# Oggetti
+Un oggetto è una raccolta non ordinata di proprietà, ognuna delle
+quali ha una chiave (nome) e un valore. I nomi delle proprietà
+possono essere una stringa o un Symbol().Un oggetto è una raccolta non ordinata di proprietà, ognuna delle
+quali ha una chiave (nome) e un valore. I nomi delle proprietà
+possono essere una stringa o un Symbol().
+
+---
+<!-- _header: Oggetti -->
+Letterali degli oggetti
+
+I letterali degli oggetti in JavaScript consentono di creare oggetti
+in modo conciso utilizzando una notazione specifica. Una
+proprietà ha una chiave (conosciuta anche come chiave o
+“identificatore”) prima dei due punti ":", ed un valore alla sua destra.
+``` js
+let persona = {
+  nome: "Mario",
+  età: 30 
+ };
+```
+----
+<!-- _header: Oggetti -->
+## Dizionario
+
+Il termine dizionario in JavaScript si riferisce all'uso di un oggetto
+come una collezione di coppie chiave-valore, dove le chiavi sono
+stringhe e i valori possono essere qualsiasi tipo di dato.
+```js
+let persona = {
+"nome completo": "Mario Rossi",
+età: 30
+};
+console.log(persona["nome completo"]);
+```
+
+---- 
+<!-- _header: Oggetti -->
+In questo caso, la chiave "nome completo" è composta da più
+parole e viene inclusa tra le parentesi quadre per indicare che è
+una chiave valida. Per accedere a questa proprietà, puoi utilizzare
+la notazione delle parentesi quadre.
+
+---
+<!-- _header: Oggetti -->
+## Riferimento e copia
+
+Una delle principali differenze tra oggetti e primitivi è la modalità
+di memorizzazione e copia. Gli oggetti vengono memorizzati e
+copiati "per riferimento", mentre i primitivi come stringhe, numeri
+e booleani vengono sempre copiati "per valore".
+
+---
+
+<!-- _header: Oggetti -->
+
+ **Esempio di oggetti primitivi:**
+
+```js 
+let obj = { nome: "Alice", età: 25 }; 
+```
+
+la variabile obj contiene un riferimento all'oggetto che ha le
+proprietà "nome" e "età". L'oggetto stesso è memorizzato altrove
+in memoria, mentre la variabile obj funge da punto di accesso per
+raggiungere e manipolare l'oggetto.
+
+---
+<!-- _header: Oggetti -->
+## Metodi
+Gli oggetti hanno una serie di metodi incorporati che possono
+essere utilizzati per manipolare e interagire con i dati all'interno
+degli oggetti stessi.
+
+---
+<!-- _header: Oggetti -->
+### Metodo this
+Il metodo this in JavaScript si riferisce all'oggetto corrente su cui
+è stato chiamato il metodo. Può essere utilizzato all'interno di un
+oggetto per accedere alle sue proprietà e metodi.
+```js
+const obj = {
+    name: "John",
+    greet: function() {
+        console.log("Hello," + this.name + "!");
+    }
+};
+
+obj.greet();
+```
+
+---
+<!-- _header: Oggetti -->
+### Metodo toSting()
+Il metodo toString() in JavaScript è una funzione incorporata che
+viene utilizzata per convertire un oggetto in una stringa. Il
+metodo toString() restituisce una rappresentazione testuale
+dell'oggetto.
+```js
+const obj = { name: 'Alice', age: 25 };
+console.log(obj.toString());
+```
+
+---
+<!-- _header: Array -->
+
+# Array 
+Un array è una struttura dati che memorizza una collezione di elementi dello stesso tipo in un'unica struttura. Gli array sono utilizzati per rappresentare sequenze  di dati, dove ogni elemento è identificato da un indice. 
+
+___
+<!-- _header: Array -->
+## Memorizzazione Contigua
+
+Gli array sono caratterizzati dalla memorizzazione contigua degli elementi. Questo significa che tutti gli elementi dell'array sono memorizzati in posizioni di memoria adiacenti e sequenziali.
+Ecco i dettagli principali:
+- Accesso Diretto.
+- Efficienza nella Memorizzazione.
+- Ridimensionamento.
+
+---
+<!-- _header: Array -->
+### Accesso Diretto
+Grazie alla memorizzazione contigua, ogni elemento dell'array può essere accesso direttamente in tempo costante $O(1)$. Questo è possibile perché, conoscendo l'indice dell'elemento e la dimensione di ogni elemento, l'indirizzo di memoria dell'elemento può essere calcolato direttamente.
+
+---
+<!-- _header: Array -->
+### Efficienza nella Memorizzazione
+ Poiché tutti gli elementi sono memorizzati in un blocco continuo di memoria, le operazioni di accesso e aggiornamento degli elementi sono molto rapide e non richiedono operazioni aggiuntive di navigazione tra strutture di memoria disparate.
+
+---
+<!-- _header: Array -->
+
+### Ridimensionamento
+Se un vettore deve essere ridimensionato ad esempio, per aggiungere più elementi di quelli previsti inizialmente, il sistema deve allocare un nuovo blocco di memoria contigua, copiare gli elementi esistenti e aggiornare i riferimenti al nuovo blocco. Questo può comportare un costo di prestazioni temporaneo durante l'operazione di ridimensionamento.
+
+---
+<!-- _header: Array -->
+**Esempio:**
+```js
+const array = [10, 20, 30, 40, 50]; // Definizione dell'array
+console.log(array[0]); // Accesso al primo elemento: 10
+console.log(array[1]); // Accesso al secondo elemento: 20
+console.log(array[2]); // Accesso al terzo elemento: 30
+
+```
+---
+<!-- _header: Array -->
+## Metodi 
+Gli array in JavaScript sono strutture dati molto potenti e versatili, e JavaScript fornisce una serie di metodi integrati che facilitano l'esecuzione di operazioni comuni su di essi. Questi metodi includono funzioni per l'aggiunta, la rimozione, la modifica e la trasformazione degli elementi all'interno di un array.
+
+---
+<!-- _header: Array -->
+
+### Premessa
+Sebbene i metodi degli array offerti da JavaScript siano estremamente utili e semplifichino molte operazioni comuni, è fondamentale comprendere come funzionano questi metodi a livello di algoritmi. Questo non solo ti aiuterà a utilizzare i metodi in modo più efficace, ma ti fornirà anche una base solida per implementare soluzioni personalizzate e ottimizzare le prestazioni del tuo codice.
