@@ -4,20 +4,32 @@ Questo repository contiene una panoramica completa del linguaggio di programmazi
 
 ## Contenuti:
 
-Introduzione a JavaScript: Una panoramica delle caratteristiche principali di JavaScript e del suo ruolo nello sviluppo web.
-Variabili: Come dichiarare, assegnare e utilizzare le variabili in JavaScript.
+- Introduzione a JavaScript: Una panoramica delle caratteristiche principali di JavaScript e del suo ruolo nello sviluppo web.
+
+- Variabili: Come dichiarare, assegnare e utilizzare le variabili in JavaScript.
 Tipi di Dati: Descrizione dei tipi di dati primitivi e degli oggetti in JavaScript.
-Operatori: Spiegazione degli operatori aritmetici, di confronto, di assegnamento e logici.
-Conditional Statement: Illustrazione delle istruzioni condizionali come if, else e switch.
-Cicli: Descrizione dei cicli for, while e do...while, con particolare attenzione all'invariante del ciclo.
-Funzioni: Come definire e utilizzare le funzioni, incluse le arrow function e la ricorsione.
-Oggetti: Spiegazione della creazione e dell'utilizzo degli oggetti, inclusi i metodi e le proprietà.
-Array: Panoramica degli array e dei loro metodi principali.
-Programmazione Asincrona: (Prossimamente)
-Il DOM: (Prossimamente)
-Chiusure: (Prossimamente)
-Classi: (Prossimamente)
-Nota: Sebbene abbia una conoscenza pregressa di JavaScript, ho creato questo repository principalmente a scopo didattico e per consolidare ulteriormente la mia comprensione del linguaggio.
+
+- Operatori: Spiegazione degli operatori aritmetici, di confronto, di assegnamento e logici.
+
+- Conditional Statement: Illustrazione delle istruzioni condizionali come if, else e switch.
+
+- Cicli: Descrizione dei cicli for, while e do...while, con particolare attenzione all'invariante del ciclo.
+
+- Funzioni: Come definire e utilizzare le funzioni, incluse le arrow function e la ricorsione.
+
+- Oggetti: Spiegazione della creazione e dell'utilizzo degli oggetti, inclusi i metodi e le proprietà.
+
+- Array: Panoramica degli array e dei loro metodi principali.
+
+- Programmazione Asincrona: **(Prossimamente)**
+
+- Il DOM: **(Prossimamente)**
+
+- Chiusure: **(Prossimamente)**
+
+- Classi: **(Prossimamente)**
+
+**Nota**: Sebbene abbia una conoscenza pregressa di JavaScript, ho creato questo repository principalmente a scopo didattico e per consolidare ulteriormente la mia comprensione del linguaggio.
 
 ## Come utilizzare questo repository:
 
@@ -30,4 +42,4 @@ Contributi:
 I contributi sono benvenuti! Se trovi errori o hai suggerimenti per migliorare il contenuto, sentiti libero di aprire una issue o inviare una pull request.
 
 
-Buon apprendimento!
+**Buon apprendimento!**
